@@ -1,53 +1,61 @@
+להוסיף:
+- כפתור הסר מהעגלה וכמה מכל סוג מטפחת רצה
+- להוסיף בצור קשר יותר
+- לעצב יפה - פונטים
+- לעשות שהתוכן עניינים למעלה הופך להיות כפתור שנפתח מהצד כשגוללים למטה
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>המטפחות של עדי</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>חנות מטפחות</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="Logo" class="logo">
-        <nav>
-            <ul>
-                <li><a href="#home">בית</a></li>
-                <li><a href="#products">מוצרים</a></li>
-                <li><a href="#about">אודות</a></li>
-                <li><a href="#contact">יצירת קשר</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- גלק עליון -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="לוגו מטפחות" />
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#about">אודות</a></li>
+        <li><a href="#contact">צור קשר</a></li>
+        בית מוצרים אודות יצירת קשר
+      </ul>
+    </nav>
+  </header>
 
-    <section id="home" class="hero">
-        <h1>מטפחות לונג</h1>
-        <h2> עבודת יד</h2>
-        <p>באהבה ממני אליכן</p>
-    </section>
-
-    <section id="products">
-        <h2>המטפחות שלי</h2>
-        <div class="product-grid">
-            <div class="product">
-                <img src="fabric1.jpg" alt="Fabric 1">
-                <h3> דגם חליל</h3>
-                <p>90₪</p>
-                <button>הוספה לעגלה</button>
-            </div>
-            <div class="product">
-                <img src="fabric2.jpg" alt="Fabric 2">
-                <h3>Silk Fabric</h3>
-                <p>$30 per yard</p>
-                <button>Add to Cart</button>
-            </div>
-            <!-- Add more products as needed -->
-        </div>
-    </section>
-
+  <!-- תוכן ראשי -->
+  <main>
     <section id="about">
-        <h2>About Us</h2>
-        <p>Our fabrics are handmade with the finest materials. Each piece is unique, ensuring quality and elegance.</p>
+      <h2>אודות</h2>
+      <p>ברוכים הבאים לחנות המטפחות שלנו! כל המטפחות בעבודת יד ומיוצרות באהבה.</p>
     </section>
+
+    <section class="products">
+      <h2>המוצרים שלנו</h2>
+      <div class="product">
+        <img src="scarf1.png" alt="מטפחת 1">
+        <h3>מטפחת פרחונית</h3>
+        <p>₪50</p>
+        <button class="add-to-cart">הוסף לעגלה</button>
+      </div>
+      <div class="product">
+        <img src="scarf2.png" alt="מטפחת 2">
+        <h3>מטפחת קלאסית</h3>
+        <p>₪70</p>
+        <button class="add-to-cart">הוסף לעגלה</button>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>צור קשר</h2>
+      <p>נשמח לעמוד לשירותכם! צרו קשר בכתובת: <a href="mailto:info@scarves.com">info@scarves.com</a></p>
+    </section>
+
 
     <section id="contact">
         <h2>Contact Us</h2>
@@ -64,9 +72,24 @@
             <button type="submit">Submit</button>
         </form>
     </section>
+  </main>
 
-    <footer>
-        <p>&copy; 2024 Fabric Store</p>
-    </footer>
+  <!-- עגלה בתחתית הדף -->
+  <footer>
+    <section id="cart">
+      <h2>העגלה שלי</h2>
+      <ul id="cart-items"></ul>
+      <p id="cart-total">סה"כ: ₪0</p>
+      <button id="sendOrderButton">שלח הזמנה בוואטסאפ</button>
+    </section>
+
+    <!-- כפתור מעבר לצ'אט בוואטסאפ -->
+    <a href="https://wa.me/972556606160" class="whatsapp-button" target="_blank">
+      <img src="whatsapp-icon.png" alt="וואטסאפ">
+      שלח הודעה בווטסאפ
+    </a>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
