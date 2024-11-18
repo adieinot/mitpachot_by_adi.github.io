@@ -1,72 +1,72 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>מטפחות בעבודת יד</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>המטפחות של עדי</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="לוגו מטפחות">
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#home">דף הבית</a></li>
-        <li><a href="#shop">חנות</a></li>
-        <li><a href="#about">עלינו</a></li>
-        <li><a href="#contact">צור קשר</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <img src="logo.png" alt="Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="#home">בית</a></li>
+                <li><a href="#products">מוצרים</a></li>
+                <li><a href="#about">אודות</a></li>
+                <li><a href="#contact">יצירת קשר</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <main>
-    <section id="home">
-      <h1>מטפחות בעבודת יד</h1>
-      <p>מבחר מטפחות ייחודיות ואיכותיות בעיצוב אישי.</p>
-      <a href="#shop" class="button">לרכישה עכשיו</a>
+    <section id="home" class="hero">
+        <h1>מטפחות לונג</h1>
+        <h2> עבודת יד</h2>
+        <p>באהבה ממני אליכן</p>
     </section>
 
-    <section id="shop" class="products">
-      <h2>המוצרים שלנו</h2>
-      <div class="product">
-        <img src="scarf1.jpg" alt="מטפחת 1">
-        <h3>מטפחת חגיגית</h3>
-        <p>מחיר: ₪50</p>
-        <button class="add-to-cart">הוסף לעגלה</button>
-      </div>
-      <div class="product">
-        <img src="scarf2.jpg" alt="מטפחת 2">
-        <h3>מטפחת יומיומית</h3>
-        <p>מחיר: ₪40</p>
-        <button class="add-to-cart">הוסף לעגלה</button>
-      </div>
+    <section id="products">
+        <h2>המטפחות שלי</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="fabric1.jpg" alt="Fabric 1">
+                <h3> דגם חליל</h3>
+                <p>90₪</p>
+                <button>הוספה לעגלה</button>
+            </div>
+            <div class="product">
+                <img src="fabric2.jpg" alt="Fabric 2">
+                <h3>Silk Fabric</h3>
+                <p>$30 per yard</p>
+                <button>Add to Cart</button>
+            </div>
+            <!-- Add more products as needed -->
+        </div>
     </section>
 
     <section id="about">
-      <h2>עלינו</h2>
-      <p>אנחנו מותג מקומי שמתמחה בעיצוב מטפחות ייחודיות בעבודת יד, מתוך אהבה ליופי ולמסורת.</p>
+        <h2>About Us</h2>
+        <p>Our fabrics are handmade with the finest materials. Each piece is unique, ensuring quality and elegance.</p>
     </section>
 
     <section id="contact">
-      <h2>צור קשר</h2>
-      <form>
-        <label for="name">שם:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">אימייל:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="message">הודעה:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-        <button type="submit">שלח</button>
-      </form>
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
     </section>
-  </main>
 
-  <footer>
-    <p>© 2024 מטפחות בעבודת יד. כל הזכויות שמורות.</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <footer>
+        <p>&copy; 2024 Fabric Store</p>
+    </footer>
 </body>
 </html>
