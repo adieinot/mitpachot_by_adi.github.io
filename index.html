@@ -3,23 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>המטפחות של עדי</title>
+  <title>חנות מטפחות</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <!-- גלק עליון -->
-  <header>
+<header id="sticky-navbar">
+  <div class="navbar-container">
     <div class="logo">
       <img src="logo.png" alt="לוגו מטפחות" />
     </div>
     <nav>
       <ul>
         <li><a href="#about">אודות</a></li>
+        <li><a href="#products">מוצרים</a></li>
         <li><a href="#contact">צור קשר</a></li>
-        בית מוצרים אודות יצירת קשר
       </ul>
     </nav>
-  </header>
+  </div>
+</header>
+
 
   <!-- תוכן ראשי -->
   <main>
@@ -46,24 +49,18 @@
 
     <section id="contact">
       <h2>צור קשר</h2>
-      <p>נשמח לעמוד לשירותכם! צרו קשר בכתובת: <a href="mailto:info@scarves.com">info@scarves.com</a></p>
-    </section>
+      <form>
+        <label for="name">שם:</label>
+        <input type="text" id="name" name="name" placeholder="הכנס את שמך" required>
 
+        <label for="email">אימייל:</label>
+        <input type="email" id="email" name="email" placeholder="הכנס את כתובת האימייל שלך" required>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+        <label for="message">הודעה:</label>
+        <textarea id="message" name="message" placeholder="כתוב את הודעתך כאן" required></textarea>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-
-            <button type="submit">Submit</button>
-        </form>
+        <button type="submit">שלח</button>
+      </form>
     </section>
   </main>
 
