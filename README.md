@@ -1,1 +1,3 @@
-mitpachot by adi
+#index - html page
+#styles - css page
+#script - java page
