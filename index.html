@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>חנות מטפחות</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- גלק עליון -->
@@ -15,8 +15,9 @@
     </div>
     <nav>
       <ul>
-        <li><a href="#about">אודות</a></li>
         <li><a href="#products">מוצרים</a></li>
+        <li><a href =#cart">עגלה</a></li>
+        <li><a href="#about">אודות</a></li>
         <li><a href="#contact">צור קשר</a></li>
       </ul>
     </nav>
@@ -26,25 +27,43 @@
 
   <!-- תוכן ראשי -->
   <main>
-    <section id="about">
-      <h2>אודות</h2>
-      <p>ברוכים הבאים לחנות המטפחות שלנו! כל המטפחות בעבודת יד ומיוצרות באהבה.</p>
-    </section>
-
-    <section class="products">
-      <h2>המוצרים שלנו</h2>
+    <p>שלום לך! כאן נמצאים הדגמים שבמלאי כרגע:) עובדת על עוד ברגעים אלה ממש...</p>
+    <section class="products", id="products">
       <div class="product">
         <img src="scarf1.png" alt="מטפחת 1">
-        <h3>מטפחת פרחונית</h3>
-        <p>₪50</p>
+        <h3>דגם חליל</h3>
+        <p>₪90</p>
         <button class="add-to-cart">הוסף לעגלה</button>
       </div>
       <div class="product">
         <img src="scarf2.png" alt="מטפחת 2">
-        <h3>מטפחת קלאסית</h3>
-        <p>₪70</p>
+        <h3>דגם פסנתר</h3>
+        <p>₪90</p>
         <button class="add-to-cart">הוסף לעגלה</button>
       </div>
+      <div class="product">
+        <img src="">
+      </div>
+    </section>
+    <!-- עגלה -->
+    <section id="cart">
+      <h2>העגלה שלי</h2>
+      <ul id="cart-items"></ul>
+      <p id="cart-total">סה"כ: ₪0</p>
+      <button id="sendOrderButton">שלח הזמנה בוואטסאפ</button>
+    </section>
+
+
+  </main>
+
+  <footer>
+    <section id="about">
+      <h2>אודות</h2>
+      <h2>שלום לך! לי קוראים עדי:)</h2>
+      <h3> אז קצת על איך שהכל התחיל...</h3>
+      <p>ממש קצת אחרי החתונה, כשגיליתי כמה עולם המטפחות המעוצבות יקר חיפשתי פתרונות.</p>
+      <p>הרגשתי שזה לא ביכולת שלי להוציא עכשיו על כל מטפחת כאלה סכומים והחלטתי לעשות מעשה ולהכין אותן בעצמי! </p>
+      <p>ועכשיו אני שמחה לפנק גם אותך במטפחת במחיר הגיוני:)</p>
     </section>
 
     <section id="contact">
@@ -62,22 +81,6 @@
         <button type="submit">שלח</button>
       </form>
     </section>
-  </main>
-
-  <!-- עגלה בתחתית הדף -->
-  <footer>
-    <section id="cart">
-      <h2>העגלה שלי</h2>
-      <ul id="cart-items"></ul>
-      <p id="cart-total">סה"כ: ₪0</p>
-      <button id="sendOrderButton">שלח הזמנה בוואטסאפ</button>
-    </section>
-
-    <!-- כפתור מעבר לצ'אט בוואטסאפ -->
-    <a href="https://wa.me/972556606160" class="whatsapp-button" target="_blank">
-      <img src="whatsapp-icon.png" alt="וואטסאפ">
-      שלח הודעה בווטסאפ
-    </a>
   </footer>
 
   <script src="script.js"></script>

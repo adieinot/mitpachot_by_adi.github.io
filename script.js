@@ -38,9 +38,13 @@ document.addEventListener("DOMContentLoaded", () => {
     cartItems.innerHTML = "";
     let total = 0;
 
+    if (cart.length === 0) {
+      cartItems.innerHTML = '<li class="empty-cart-message">העגלה ריקה</li>';
+    }
+
     cart.forEach((item) => {
       const li = document.createElement("li");
-      li.innerText = `${item.name} - ₪${item.price} x ${item.quantity}`;
+      li.innerHTML = `${item.name} - ₪${item.price} <span class="quantity-display">כמות: ${item.quantity}</span>`;
       total += parseFloat(item.price.replace("₪", "")) * item.quantity;
 
       const removeButton = document.createElement("button");
