@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartItems = document.getElementById("cart-items");
   const cartTotal = document.getElementById("cart-total");
   const sendOrderButton = document.getElementById("sendOrderButton");
+  const WhatsappButton = document.getElementById("WhatsappButton");
+
 
   const savedCart = localStorage.getItem("cart");
   if (savedCart) {
@@ -65,6 +67,11 @@ document.addEventListener("DOMContentLoaded", () => {
   function saveCart() {
     localStorage.setItem("cart", JSON.stringify(cart));
   }
+
+  WhatsappButton.addEventListener("click", () => {
+    const whatsappLink = `https://wa.me/972556606160`;
+    window.open(whatsappLink, "_blank");
+    }
 
   sendOrderButton.addEventListener("click", () => {
     if (cart.length === 0) {
