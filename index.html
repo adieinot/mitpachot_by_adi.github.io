@@ -7,49 +7,81 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- חלק עליון -->
-<header id="sticky-navbar">
-  <div class="navbar-container">
-    <div class="logo">
-      <img src="logo.png" alt="לוגו מטפחות" />
+  <!-- תפריט עליון -->
+  <header id="sticky-navbar">
+    <div class="navbar-container">
+      <div class="logo">
+        <img src="logo.png" alt="לוגו מטפחות" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#products">מוצרים</a></li>
+          <li><a href="#cart">עגלה</a></li>
+          <li><a href="#about">אודות</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <ul>
-        <li><a href="#products">מוצרים</a></li>
-        <li><a href =#cart">עגלה</a></li>
-        <li><a href="#about">אודות</a></li>
-        <li><a href="#contact">צור קשר</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
+  </header>
 
   <!-- תוכן ראשי -->
   <main>
-    <section class="products", id="products">
-      <div>
-        <p>שלום לך! כאן נמצאים הדגמים שבמלאי כרגע:) עובדת על עוד ברגעים אלה ממש...</p>
-        <h2>שימי לב איסוף מירושלים</h2>
-      </div>
-      <div class="product">
-        <img src="guitar.jpeg" alt="מטפחת 1">
-        <h3>דגם גיטרה</h3>
+    <section id="products">
+      <p>שלום לך! כאן נמצאים הדגמים שבמלאי כרגע:) עובדת על עוד ברגעים אלה ממש...</p>
+      <h3>שימי לב, איסוף מירושלים</h3>
+    </section>
+
+    <section class="products">
+      <!-- דגם 1 -->
+      <div class="product animate__animated animate__fadeInUp" style="--product-index: 1;">
+        <img src="scarf1.png" alt="מטפחת 1">
+        <h3>דגם חליל</h3>
         <p>₪90</p>
         <button class="add-to-cart">הוסף לעגלה</button>
       </div>
-      <div class="product">
-        <img src="piano.jpeg" alt="מטפחת 2">
+      <!-- דגם 2 -->
+      <div class="product animate__animated animate__fadeInUp" style="--product-index: 2;">
+        <img src="scarf2.png" alt="מטפחת 2">
         <h3>דגם פסנתר</h3>
         <p>₪90</p>
         <button class="add-to-cart">הוסף לעגלה</button>
-      </div><div class="product">
-        <img src="canon.jpeg" alt="מטפחת 3">
-        <h3>דגם קאנון</h3>
-        <p>₪90</p>
+      </div>
+      <!-- דגם 3 -->
+      <div class="product animate__animated animate__fadeInUp" style="--product-index: 3;">
+        <img src="scarf3.png" alt="מטפחת 3">
+        <h3>דגם גיטרה</h3>
+        <p>₪100</p>
+        <button class="add-to-cart">הוסף לעגלה</button>
+      </div>
+      <!-- דגם 4 -->
+      <div class="product animate__animated animate__fadeInUp" style="--product-index: 4;">
+        <img src="scarf4.png" alt="מטפחת 4">
+        <h3>דגם חצוצרה</h3>
+        <p>₪120</p>
+        <button class="add-to-cart">הוסף לעגלה</button>
+      </div>
+      <!-- דגם 5 -->
+      <div class="product animate__animated animate__fadeInUp" style="--product-index: 5;">
+        <img src="scarf5.png" alt="מטפחת 5">
+        <h3>דגם תוף</h3>
+        <p>₪95</p>
+        <button class="add-to-cart">הוסף לעגלה</button>
+      </div>
+      <!-- דגם 6 -->
+      <div class="product animate__animated animate__fadeInUp" style="--product-index: 6;">
+        <img src="scarf6.png" alt="מטפחת 6">
+        <h3>דגם חלון</h3>
+        <p>₪110</p>
+        <button class="add-to-cart">הוסף לעגלה</button>
+      </div>
+      <!-- דגם 7 -->
+      <div class="product animate__animated animate__fadeInUp" style="--product-index: 7;">
+        <img src="scarf7.png" alt="מטפחת 7">
+        <h3>דגם כינור</h3>
+        <p>₪105</p>
         <button class="add-to-cart">הוסף לעגלה</button>
       </div>
     </section>
+
     <!-- עגלה -->
     <section id="cart">
       <h2>העגלה שלי</h2>
@@ -57,35 +89,23 @@
       <p id="cart-total">סה"כ: ₪0</p>
       <button id="sendOrderButton">שלח הזמנה בוואטסאפ</button>
     </section>
-
-
   </main>
 
   <footer>
     <section id="about">
       <h2>אודות</h2>
-      <h2>שלום לך! לי קוראים עדי:)</h2>
-      <h3> אז קצת על איך שהכל התחיל...</h3>
-      <p>ממש אחרי החתונה, כשגיליתי כמה עולם המטפחות המעוצבות יקר חיפשתי פתרונות.</p>
-      <p>החלטתי פשוט להכין אותן בעצמי.. מקווה שתאהבי ושתתחבב עלייך המצווה:) </p>
-    </section>
-
-    <section id="contact">
-      <h2>צור קשר</h2>
-      <form>
-        <label for="name">שם:</label>
-        <input type="text" id="name" name="name" placeholder="הכנס את שמך" required>
-
-        <label for="email">אימייל:</label>
-        <input type="email" id="email" name="email" placeholder="הכנס את כתובת האימייל שלך" required>
-
-        <label for="message">הודעה:</label>
-        <textarea id="message" name="message" placeholder="כתוב את הודעתך כאן" required></textarea>
-
-        <button type="submit">שלח</button>
-      </form>
+      <p>שלום לך! לי קוראים עדי :)</p>
+      <p>ממש אחרי החתונה, כשגיליתי כמה עולם המטפחות המעוצבות יקר, החלטתי להכין אותן בעצמי.</p>
+      <p>מקווה שתאהבי ושתתחבב עלייך המצווה :)</p>
     </section>
   </footer>
+
+  <!-- כפתור וואטסאפ מרחף -->
+  <a href="https://wa.me/972556606160?text=היי, הגעתי מהאתר, אשמח לברר פרטים על..."
+     target="_blank"
+     class="floating-whatsapp">
+    <img src="whatsapp-icon.png" alt="צ'אט בוואטסאפ">
+  </a>
 
   <script src="script.js"></script>
 </body>

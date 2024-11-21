@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   let cart = [];
-
   const buttons = document.querySelectorAll(".add-to-cart");
   const cartItems = document.getElementById("cart-items");
   const cartTotal = document.getElementById("cart-total");
@@ -38,24 +37,18 @@ document.addEventListener("DOMContentLoaded", () => {
     cartItems.innerHTML = "";
     let total = 0;
 
+    if (cart.length === 0) {
+      cartItems.innerHTML = '<li class="empty-cart-message">העגלה ריקה</li>';
+    }
+
     cart.forEach((item) => {
       const li = document.createElement("li");
-      li.innerText = `${item.name} - ₪${item.price} x ${item.quantity}`;
+      li.innerHTML = `${item.name} - ₪${item.price} <span class="quantity-display">כמות: ${item.quantity}</span>`;
       total += parseFloat(item.price.replace("₪", "")) * item.quantity;
-
-      const removeButton = document.createElement("button");
-      removeButton.innerText = "הסר";
-      removeButton.onclick = () => {
-        cart.splice(cart.indexOf(item), 1);
-        saveCart();
-        updateCart();
-      };
-
-      li.appendChild(removeButton);
       cartItems.appendChild(li);
     });
 
-    cartTotal.innerText = `סה"כ: ₪${total.toFixed(2)}`;
+    cartTotal.innerText = `סה"כ: ₪${total}`;
   }
 
   function saveCart() {
@@ -63,17 +56,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   sendOrderButton.addEventListener("click", () => {
-    if (cart.length === 0) {
-      alert("העגלה ריקה.");
-      return;
-    }
-
-    const orderText = cart
-      .map((item) => `${item.name} - ₪${item.price} x ${item.quantity}`)
-      .join("\n");
-    const totalText = cartTotal.innerText;
-    const message = `שלום! אני מעוניין להזמין את המוצרים הבאים:\n\n${orderText}\n\n${totalText}`;
-    const whatsappLink = `https://wa.me/972556606160?text=${encodeURIComponent(message)}`;
+    let orderMessage = "הזמנה מהאתר: \n";
+    cart.forEach((item) => {
+      orderMessage += `${item.name} - ₪${item.price}, כמות: ${item.quantity}\n`;
+    });
+    const encodedMessage = encodeURIComponent(orderMessage);
+    const whatsappLink = `https://wa.me/972556606160?text=${encodedMessage}`;
     window.open(whatsappLink, "_blank");
   });
+});
+
+document.getElementById("whatsapp-float-btn").addEventListener("click", () => {
+  const message = "היי, הגעתי מהאתר אשמח לברר פרטים על...";
+  const whatsappLink = `https://wa.me/972556606160?text=${encodeURIComponent(message)}`;
+  window.open(whatsappLink, "_blank");
 });

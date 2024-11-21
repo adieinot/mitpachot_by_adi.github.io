@@ -1,11 +1,15 @@
 /* עיצוב בסיסי */
 body {
-font-family: 'Aharoni', sans-serif;
+  font-family: 'Aharoni', sans-serif;
   direction: rtl;
   margin: 0;
   padding: 0;
   background-color: #f9f9f9;
   color: #333;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* תפריט עליון קבוע */
@@ -14,15 +18,14 @@ font-family: 'Aharoni', sans-serif;
   top: 0;
   width: 100%;
   z-index: 1000;
-  background-color: #dbb29d; /* רקע */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* צל */
+  background-color: #dbb29d;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
 }
 
-/* קונטיינר ללוגו ולתפריט */
 .navbar-container {
   display: flex;
   align-items: center;
@@ -30,13 +33,11 @@ font-family: 'Aharoni', sans-serif;
   justify-content: space-between;
 }
 
-/* עיצוב ללוגו */
 .logo img {
-  width: 50px; /* גודל לוגו */
+  width: 50px;
   height: auto;
 }
 
-/* תפריט ניווט */
 nav ul {
   list-style: none;
   display: flex;
@@ -45,61 +46,98 @@ nav ul {
   padding: 0;
 }
 
-nav ul li {
-  display: inline;
-}
-
 nav ul li a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 24px;
   transition: color 0.3s;
 }
 
 nav ul li a:hover {
-  color: #ffff; /* צבע בעת ריחוף */
+  color: #fff;
 }
 
-/* מרווח לתוכן */
-main {
-  padding-top: 80px; /* כדי למנוע חפיפה עם התפריט */
+/* אנימציית fade-in */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* עיצוב מוצר */
+
+/* עיצוב מוצרים */
 .products {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 30px;
   justify-content: center;
+  padding: 30px;
 }
 
 .product {
+  animation: fadeIn 1s ease-in-out;
+  opacity: 0;
+  animation-delay: calc(0.2s * var(--product-index));
+  animation-fill-mode: forwards;
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
   border-radius: 8px;
+  padding: 20px;
+  width: 220px;
   text-align: center;
-  padding: 10px;
-  width: 200px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s;
 }
 
 .product:hover {
   transform: scale(1.05);
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* תמונות מוצרים */
 .product img {
   width: 100%;
   height: auto;
-  max-height: 150px;
-  object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 10px;
 }
 
-/* כפתורי מוצרים */
+.product h3 {
+  margin: 10px 0;
+  font-size: 20px;
+  color: #a56b58;
+}
+
+.product p {
+  margin: 0;
+  font-size: 18px;
+  color: #6b5b57;
+}
+
+
+/* כפתור וואטסאפ מרחף */
+#whatsapp-float-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+#whatsapp-float-btn:hover {
+  transform: scale(1.1);
+}
+
 button {
   background-color: #dbb29d;
   color: #fff;
@@ -114,85 +152,62 @@ button:hover {
   background-color: #ad836d;
 }
 
-/* עיצוב עגלת קניות */
+/* עיצוב עגלה */
 #cart {
-  margin-top: 30px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-#cart h2 {
-  margin-bottom: 15px;
-  font-size: 24px;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin: 30px;
+  text-align: center;
 }
 
 #cart-items {
   list-style: none;
   padding: 0;
+  margin: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 15px;
 }
 
 #cart-items li {
-  border-bottom: 1px solid #ddd;
-  padding: 8px 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 18px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 #cart-total {
+  font-size: 22px;
   font-weight: bold;
-  margin-top: 15px;
-  text-align: center;
+  color: #6b5b57;
+  margin-bottom: 15px;
 }
 
-/* כפתור הסרה */
-#cart-items li button {
-  background-color: #dbb29d;
-  color: #fff;
-  border: none;
-  padding: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-#cart-items li button:hover {
-  background-color: #ad836d;
-}
-
-/* פוטר וכפתור וואטסאפ */
-footer {
-  margin-top: 30px;
-  padding: 20px;
-  background-color: #dbb29d;
-}
-
-.whatsapp-button {
-  display: block;
-  text-align: center;
-  background-color: #dbb29d;
+/* כפתור וואטסאפ מרחף */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #25d366;
   color: white;
-  padding: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  margin: 20px auto;
-  width: 200px;
+  border-radius: 50%;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.whatsapp-button img {
-  width: 20px;
-  vertical-align: middle;
-  margin-left: 10px;
+.floating-whatsapp:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* תופסת חווית משתמש */
-button:active {
-  transform: scale(0.95);
+.floating-whatsapp img {
+  width: 30px;
+  height: 30px;
 }
