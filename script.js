@@ -55,6 +55,42 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }
 
+  function updateCart() {
+  cartItems.innerHTML = "";
+  let total = 0;
+
+  if (cart.length === 0) {
+    cartItems.innerHTML = '<li class="empty-cart-message">העגלה ריקה</li>';
+  }
+
+  cart.forEach((item, index) => {
+    const li = document.createElement("li");
+    li.innerHTML = `${item.name} - ₪${item.price} <span class="quantity-display">כמות: ${item.quantity}</span>`;
+
+    // כפתור הסרת מוצר
+    const removeButton = document.createElement("button");
+    removeButton.className = "remove-from-cart";
+    removeButton.innerText = "הסר";
+    removeButton.addEventListener("click", () => {
+      removeFromCart(index);
+    });
+
+    li.appendChild(removeButton);
+    cartItems.appendChild(li);
+
+    total += parseFloat(item.price.replace("₪", "")) * item.quantity;
+  });
+
+  cartTotal.innerText = `סה"כ: ₪${total}`;
+}
+
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  saveCart();
+  updateCart();
+}
+
+
   sendOrderButton.addEventListener("click", () => {
     let orderMessage = "הזמנה מהאתר: \n";
     cart.forEach((item) => {
@@ -71,3 +107,20 @@ document.getElementById("whatsapp-float-btn").addEventListener("click", () => {
   const whatsappLink = `https://wa.me/972556606160?text=${encodeURIComponent(message)}`;
   window.open(whatsappLink, "_blank");
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburgerMenu = document.querySelector("#hamburgerMenu");
+  const navbarCollapse = document.querySelector("#navbar-collapse");
+
+  if (!hamburgerMenu || !navbarCollapse) {
+    console.error("האלמנטים של כפתור ההמבורגר או התפריט לא נמצאו!");
+    return;
+  }
+
+  // הוספת/הסרת מחלקת פתיחה
+  hamburgerMenu.addEventListener("click", () => {
+    navbarCollapse.classList.toggle("open");
+  });
+
+});
+

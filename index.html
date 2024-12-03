@@ -6,14 +6,25 @@
   <title>המטפחות של עדי</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <!-- תפריט עליון -->
+<body><!-- תפריט עליון -->
   <header id="sticky-navbar">
     <div class="navbar-container">
+      <!-- כפתור המבורגר
+      <div class="hamburger-menu" id="hamburgerMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div> -->
+
+      <!-- לוגו -->
       <div class="logo">
-        <img src="logo.png" alt="לוגו מטפחות" />
+        <a href="#home">
+        <img src="logo.png" alt="לוגו מטפחות">
+        </a>
       </div>
-      <nav>
+
+      <!-- תפריט  -->
+      <nav id="navbar-collapse">
         <ul>
           <li><a href="#products">מוצרים</a></li>
           <li><a href="#cart">עגלה</a></li>
@@ -22,6 +33,7 @@
       </nav>
     </div>
   </header>
+
 
   <!-- תוכן ראשי -->
   <main>
@@ -85,6 +97,7 @@
     <!-- עגלה -->
     <section id="cart">
       <h2>העגלה שלי</h2>
+      <p>מזכירה, איסוף מירושלים</p>
       <ul id="cart-items"></ul>
       <p id="cart-total">סה"כ: ₪0</p>
       <button id="sendOrderButton">שלח הזמנה בוואטסאפ</button>
