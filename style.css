@@ -13,7 +13,7 @@ body::before {
   background-image: url('logo.png'); /* שם קובץ הלוגו */
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 50%; /* גודל הלוגו */
+  background-size: 60%; /* גודל הלוגו */
   opacity: 0.1; /* שקיפות */
   position: fixed;
   top: 0;
@@ -70,7 +70,7 @@ footer h2, footer p {
 }
 
 .logo img {
-  width: 50px;
+  width: 60px;
   height: auto;
 
 }
