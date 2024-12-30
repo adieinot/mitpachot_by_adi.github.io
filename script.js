@@ -109,18 +109,51 @@ document.getElementById("whatsapp-float-btn").addEventListener("click", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const hamburgerMenu = document.querySelector("#hamburgerMenu");
-  const navbarCollapse = document.querySelector("#navbar-collapse");
+  const modal = document.getElementById("image-modal");
+  const modalImage = document.getElementById("modal-image");
+  const closeBtn = document.querySelector(".close");
+  const prevBtn = document.getElementById("prev-image");
+  const nextBtn = document.getElementById("next-image");
+  const images = document.querySelectorAll(".product img");
+  let currentImageIndex = 0;
 
-  if (!hamburgerMenu || !navbarCollapse) {
-    console.error("האלמנטים של כפתור ההמבורגר או התפריט לא נמצאו!");
-    return;
-  }
-
-  // הוספת/הסרת מחלקת פתיחה
-  hamburgerMenu.addEventListener("click", () => {
-    navbarCollapse.classList.toggle("open");
+  // פתיחת חלון עם תמונה
+  images.forEach((img, index) => {
+    img.addEventListener("click", () => {
+      currentImageIndex = index;
+      openModal(img.src);
+    });
   });
 
+  // הצגת תמונה בחלון
+  function openModal(src) {
+    modalImage.src = src;
+    modal.style.display = "block";
+  }
+
+  // סגירת חלון
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // גלילה בין תמונות
+  prevBtn.addEventListener("click", () => {
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    modalImage.src = images[currentImageIndex].src;
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    modalImage.src = images[currentImageIndex].src;
+  });
+
+  // סגירה בלחיצה מחוץ לחלון
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
 });
+
+
 

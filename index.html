@@ -5,17 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>המטפחות של עדי</title>
   <link rel="stylesheet" href="style.css">
+  <link href="lightbox/css/lightbox.css" rel="stylesheet">
 </head>
 <body><!-- תפריט עליון -->
+  <script src="lightbox/js/lightbox.js"></script>
   <header id="sticky-navbar">
     <div class="navbar-container">
-      <!-- כפתור המבורגר
-      <div class="hamburger-menu" id="hamburgerMenu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div> -->
-
       <!-- לוגו -->
       <div class="logo">
         <a href="#home">
@@ -43,41 +38,51 @@
     </section>
 
     <section class="products">
-      <!-- דגם 1 -->
-      <div class="product animate__animated animate__fadeInUp" style="--product-index: 1;">
-        <img src="guitar.jpeg" alt="מטפחת 1">
-        <h3>דגם גיטרה</h3>
-        <p>₪90</p>
-        <button class="add-to-cart">הוסף לעגלה</button>
-      </div>
-      <!-- דגם 2 -->
-      <div class="product animate__animated animate__fadeInUp" style="--product-index: 2;">
-        <img src="piano.jpeg" alt="מטפחת 2">
-        <h3>דגם פסנתר</h3>
-        <p>₪90</p>
-        <button class="add-to-cart">הוסף לעגלה</button>
-      </div>
-      <!-- דגם 3 -->
-      <div class="product animate__animated animate__fadeInUp" style="--product-index: 3;">
-        <img src="canon.jpeg" alt="מטפחת 3">
-        <h3>דגם קאנון</h3>
-        <p>₪90</p>
-        <button class="add-to-cart">הוסף לעגלה</button>
-      </div>
-      <!-- דגם 4 -->
-      <div class="product animate__animated animate__fadeInUp" style="--product-index: 4;">
-        <img src="logo.png" alt="מטפחת 4">
-        <h3>בהמשך...</h3>
-        <p>₪</p>
-        <button class="add-to-cart">הוסף לעגלה</button>
-      </div>
-      <!-- דגם 5 -->
-      <div class="product animate__animated animate__fadeInUp" style="--product-index: 5;">
-        <img src="logo.png" alt="מטפחת 5">
-        <h3>בהמשך..</h3>
-        <p>₪</p>
-        <button class="add-to-cart">הוסף לעגלה</button>
-      </div>
+      <!-- דגם ברבור-->
+      <div class="product">
+          <a href="barbur/barbur1.jpg" data-lightbox="barbur" data-title="דגם ברבור">
+            <img src="barbur/barbur1.jpg" alt="מטפחת ברבור 1">
+          </a>
+          <h3>דגם ברבור</h3>
+          <p>₪90</p>
+          <button class="add-to-cart">הוסף לעגלה</button>
+        </div>
+      <!-- דגם דרור-->
+      <div class="product">
+          <a href="dror/dror1.jpg" data-lightbox="dror" data-title="דגם דרור">
+            <img src="dror/dror1.jpg" alt="מטפחת דרור 1">
+          </a>
+          <h3>דגם דרור</h3>
+          <p>₪90</p>
+          <button class="add-to-cart">הוסף לעגלה</button>
+        </div>
+      <!-- דגם סנונית-->
+      <div class="product">
+          <a href="snonit/snonit1.jpg" data-lightbox="snonit" data-title="דגם סנונית">
+            <img src="snonit/snonit1.jpg" alt="מטפחת סנונית 1">
+          </a>
+          <h3>דגם סנונית</h3>
+          <p>₪90</p>
+          <button class="add-to-cart">הוסף לעגלה</button>
+        </div>
+      <!-- דגם דוכיפת-->
+      <div class="product">
+          <a href="duhifat/duhifat1.jpg" data-lightbox="duhifat" data-title="דגם דוכיפת">
+            <img src="duhifat/duhifat1.jpg" alt="מטפחת דוכיפת 1">
+          </a>
+          <h3>דגם דוכיפת</h3>
+          <p>₪90</p>
+          <button class="add-to-cart">הוסף לעגלה</button>
+        </div>
+      <!-- דגם שחף-->
+      <div class="product">
+          <a href="shahaf/shahaf1.jpg" data-lightbox="shahaf" data-title="דגם שחף">
+            <img src="shahaf/shahaf1.jpg" alt="מטפחת שחף 1">
+          </a>
+          <h3>דגם שחף</h3>
+          <p>₪90</p>
+          <button class="add-to-cart">הוסף לעגלה</button>
+        </div>
     </section>
 
     <!-- עגלה -->
@@ -86,6 +91,7 @@
       <p>מזכירה, איסוף מירושלים</p>
       <ul id="cart-items"></ul>
       <p id="cart-total">סה"כ: ₪0</p>
+      <h2>שימי לב, איסוף מירושלים בלבד כעת</h2>
       <button id="sendOrderButton">שלח הזמנה בוואטסאפ</button>
     </section>
   </main>

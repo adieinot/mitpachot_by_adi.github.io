@@ -1,20 +1,11 @@
 /* עיצוב בסיסי */
-body {
-  font-family: 'Aharoni', sans-serif;
-  direction: rtl;
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9;
-  color: #333;
-}
-
 body::before {
   content: '';
   background-image: url('logo.png'); /* שם קובץ הלוגו */
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 60%; /* גודל הלוגו */
-  opacity: 0.1; /* שקיפות */
+  background-size: 70%; /* גודל הלוגו */
+  opacity: 0.5; /* שקיפות */
   position: fixed;
   top: 0;
   left: 0;
@@ -23,13 +14,39 @@ body::before {
   z-index: -1; /* מאחורי כל האלמנטים */
 }
 
+body {
+  font-family: 'Aharoni', sans-serif;
+  direction: rtl;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+  padding-top: 100px;
+}
+
+}
+
 
 html {
   scroll-behavior: smooth;
 }
 
+/* תפריט עליון ותחתון */
+#sticky-navbar {
+  background-color: #dbb29d;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
 footer {
-  background-color: #dbb29d; /* צבע החלק העליון */
+  background-color: #dbb29d; /* צבע כמו התפריט העליון */
   color: #fff; /* טקסט בהיר */
   padding: 20px;
   text-align: center;
@@ -37,21 +54,6 @@ footer {
 
 footer h2, footer p {
   margin: 10px 0;
-}
-
-/* תפריט עליון קבוע */
-#sticky-navbar {
-      background-color: #dbb29d;
-
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: left;
-  justify-content: space-between;
-  padding: 10px 20px;
 }
 
 .navbar-container {
@@ -66,101 +68,11 @@ footer h2, footer p {
   display: flex;
   align-items: center;
   order: -1; /* מבטיח שהלוגו תמיד יופיע ראשון */
-
 }
 
 .logo img {
   width: 60px;
   height: auto;
-
-}
-
-
-/* תפריט נפתח מוסתר כברירת מחדל
-#navbar-collapse {
-  display: none;
-}
-
-#navbar-collapse.open {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.hamburger-menu {
-  cursor: pointer;
-}
-
-.hamburger-menu span {
-  display: block;
-  width: 30px;
-  height: 4px;
-  background-color: #333;
-  margin: 5px 0;
-  transition: 0.3s;
-}
-
-#sticky-navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #dbb29d;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 20px;
-}
-*/
-
-/* עיצוב הבסיס */
-#sticky-navbar {
-  position: sticky;
-  top: 0;
-  background-color: #dbb29d;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-}
-
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  direction: rtl; /* כיוון לימין */
-
-}
-
-.logo a {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
-  text-decoration: none;
-}
-
-#navbar-#navbar-collapse ul {
-  gap: 20px; /* מרווח בין הפריטים */
-  list-style: none; /* מסיר את הכדורים מהרשימה */
-}
-
-#navbar-collapse ul li a {
-  font-size: 1rem;
-  color: #333;
-  transition: color 0.3s; /* מעבר חלק */
-padding: 10px 15px; /* ריווח פנימי */
-}
-
-#navbar-collapse ul li a:hover {
-  color: #fff; /* צבע לבן במעבר */
-
-}
-
-
-/* התאמה בסיסית */
-body {
-  font-family: 'Aharoni', sans-serif;
-  direction: rtl;
-  background-color: #f9f9f9;
-  margin: 0;
-  padding: 0;
 }
 
 nav ul {
@@ -175,8 +87,9 @@ nav ul li a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 20px;
   transition: color 0.3s;
+  padding: 10px 15px; /* ריווח פנימי למניעת חיתוך בצדדים */
 }
 
 nav ul li a:hover {
@@ -194,7 +107,6 @@ nav ul li a:hover {
     transform: translateY(0);
   }
 }
-
 
 /* עיצוב מוצרים */
 .products {
@@ -221,8 +133,7 @@ nav ul li a:hover {
 
 .product:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* צל נוסף */
-
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .product img {
@@ -243,7 +154,6 @@ nav ul li a:hover {
   color: #6b5b57;
 }
 
-
 button {
   background-color: #dbb29d;
   color: #fff;
@@ -258,7 +168,7 @@ button:hover {
   background-color: #ad836d;
 }
 
-/* עיצוב כפתור הסר */
+/* כפתור הסרת מוצר */
 button.remove-from-cart {
   background-color: #dbb29d;
   color: #fff;
@@ -270,6 +180,58 @@ button.remove-from-cart {
 }
 
 button.remove-from-cart:hover {
+  background-color: #ad836d;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.modal-content {
+  position: relative;
+  margin: auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#prev-image, #next-image {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #dbb29d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#prev-image:hover, #next-image:hover {
   background-color: #ad836d;
 }
 
@@ -333,20 +295,22 @@ button.remove-from-cart:hover {
   height: 30px;
 }
 
-
 /* התאמת עיצוב לנייד */
 @media screen and (max-width: 600px) {
+    body {
+      padding-top: 110px;
+      }
+
   .products {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 4 דגמים בשורה */
-    gap: 10px; /* מרווחים קטנים יותר */
+    grid-template-columns: repeat(2, 1fr); /* 2 דגמים בשורה */
+    gap: 10px;
   }
 
   .product {
     width: auto; /* כל דגם יתאים לגודל התא */
     padding: 10px; /* ריווח קטן יותר */
   }
-}
 
   nav ul {
     flex-direction: column;
@@ -354,25 +318,10 @@ button.remove-from-cart:hover {
   }
 
   nav ul li a {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   #sticky-navbar {
     padding: 15px;
-  }
-}
-
- #sticky-navbar {
-    padding: 30px;
-  }
-
-#navbar-collapse ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  #navbar-collapse ul li a {
-    font-size: 0.9rem;
   }
 }
