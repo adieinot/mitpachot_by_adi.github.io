@@ -5,7 +5,7 @@ body::before {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 70%; /* גודל הלוגו */
-  opacity: 0.5; /* שקיפות */
+  opacity: 0.4; /* שקיפות */
   position: fixed;
   top: 0;
   left: 0;
@@ -137,7 +137,7 @@ nav ul li a:hover {
 }
 
 .product img {
-  width: 100%;
+  width: 35%;
   height: auto;
   border-radius: 8px;
 }
@@ -235,6 +235,8 @@ button.remove-from-cart:hover {
   background-color: #ad836d;
 }
 
+
+
 /* עיצוב עגלה */
 #cart {
   padding: 30px;
@@ -293,6 +295,27 @@ button.remove-from-cart:hover {
 .floating-whatsapp img {
   width: 30px;
   height: 30px;
+}
+
+
+/* כפתור אינסטגרם מרחף */
+.floating-instegram {
+  position: fixed;
+  bottom: 90px;
+  left: 20px;
+  border-radius: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0);
+  transition: transform 0.1s, box-shadow 0.3s;
+}
+
+.floating-instegram:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.floating-instegram img {
+  width: 80px;
+  height: 80px;
 }
 
 /* התאמת עיצוב לנייד */
