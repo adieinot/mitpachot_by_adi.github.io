@@ -96,6 +96,10 @@ nav ul li a:hover {
   color: #fff;
 }
 
+.gallery a{
+   text-decoration: none;
+}
+
 /* אנימציית fade-in */
 @keyframes fadeIn {
   0% {
